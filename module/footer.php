@@ -317,8 +317,7 @@ $(document).ready(function() {
 	    });
     });
     
-    $( "body" ).on( "click", ".ordercart", function(e) {
-	    e.preventDefault();
+    $('.ordercart').click(function(){
 
 	    if($('#name').val() == ''  ||  $('#email').val() == ''  ||  $('#address').val() == ''  ||  $('#phone').val() == ''){
 		    $(".shopping-user-infor").addClass('warning');
@@ -328,7 +327,7 @@ $(document).ready(function() {
 		    $.ajax({
 			    type: 'post',
 			    url: base_url +'order',
-			    data: $("#form-order").serialize(),
+			    data: $(".shopping-user-infor").serialize(),
 			    dataType: 'json',
 			    success: function(json){
 			        if(json['res']){
@@ -351,23 +350,23 @@ $(document).ready(function() {
 
 
 	
-	var ajaxload = 0;
-	var offset = 1;
-	var loadmore = $('#loadmore').offset();
+	// var ajaxload = 0;
+	// var offset = 1;
+	// var loadmore = $('#loadmore').offset();
 	
-	$(window).scroll(function () {
-		if(ajaxload == 0 && loadmore.top <= $(window).scrollTop()) {
-			ajaxload = 1;
+	// $(window).scroll(function () {
+	// 	if(ajaxload == 0 && loadmore.top <= $(window).scrollTop()) {
+	// 		ajaxload = 1;
 			
-			$.post(base_url +'product-more', { offset: offset }, function(res){
-				if(res){
-					$('#loadmore').before(res);
-					ajaxload = 0;
-					offset++;
-				}
-			});
-		}
-	});
+	// 		$.post(base_url +'product-more', { offset: offset }, function(res){
+	// 			if(res){
+	// 				$('#loadmore').before(res);
+	// 				ajaxload = 0;
+	// 				offset++;
+	// 			}
+	// 		});
+	// 	}
+	// });
 
 });
 

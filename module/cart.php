@@ -98,7 +98,7 @@ include dirname(__FILE__) .'/header.php'; ?>
 	    			<div class="shopping-title">
 	    				<span><i class="fa fa-pencil-square-o"></i></span>THÔNG TIN GIAO NHẬN
 	    			</div>
-    				<div class="shopping-user-infor">
+    				<form class="shopping-user-infor">
     					<div class="shopping-user-infor-box">
 							<i class="fa fa-user"></i>
 							<input type="text" class="form-control" name="name" id="name" placeholder="Họ và tên*">
@@ -123,7 +123,7 @@ include dirname(__FILE__) .'/header.php'; ?>
 							<i class="fa fa-sticky-note-o"></i>
 							<textarea type="text" class="form-control" name="message" id="message" rows="2" placeholder="Ghi chú"></textarea>
 						</div>
-    				</div>
+    				</form>
     				<div class="shopping-warning-note hidden">
 						<div class="warning-note">Vui lòng điền đầy đủ thông tin <br> trước khi đặt hàng</div>
 						<div class="warning-note-bottom"></div>
